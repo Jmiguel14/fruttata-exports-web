@@ -1,10 +1,6 @@
 export const brand = {
   legalName: "FRUTTATA EXPORTS S.A.S.",
   shortName: "Fruttata Exports",
-  tagline: "Frescos desde Ecuador. Conectando con el mundo.",
-  values: ["Calidad", "Confianza", "Compromiso", "Sostenibilidad"],
-  address:
-    "Av. Chone y 4 de Diciembre, sector Bajada Las Palmas, El Carmen, Manabí, Ecuador.",
   phones: [
     {
       label: "+593 99 148 2131",

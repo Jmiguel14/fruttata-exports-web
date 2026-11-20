@@ -1,20 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
+import { Link, usePathname } from "@/i18n/navigation";
 import { mainNavigation } from "@/lib/navigation";
 
-function isActivePath(pathname: string, href: string) {
-  if (href === "/") {
-    return pathname === "/";
-  }
-
-  return pathname === href || pathname.startsWith(`${href}/`);
-}
-
 export function Header() {
+  const t = useTranslations("Nav");
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -25,7 +19,7 @@ export function Header() {
           href="/"
           className="inline-flex shrink-0 items-center"
           onClick={() => setIsMenuOpen(false)}
-          aria-label="Fruttata Exports home"
+          aria-label={t("homeLabel")}
         >
           <Image
             src="/brand/logo-transparent.png"
@@ -37,9 +31,9 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Main">
+        <nav className="hidden items-center gap-1 md:flex" aria-label={t("main")}>
           {mainNavigation.map((item) => {
-            const active = isActivePath(pathname, item.href);
+            const active = pathname === item.href;
 
             return (
               <Link
@@ -51,18 +45,19 @@ export function Header() {
                     : "text-foreground hover:bg-surface hover:text-plum"
                 }`}
               >
-                {item.label}
+                {t(item.key)}
               </Link>
             );
           })}
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
+          <LanguageSwitcher />
           <Link
-            href="/contacto"
+            href="/contact"
             className="rounded-full bg-plum px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-plum-dark"
           >
-            Solicitar cotización
+            {t("quote")}
           </Link>
         </div>
 
@@ -71,10 +66,10 @@ export function Header() {
           className="inline-flex items-center justify-center rounded-md border border-border p-2 text-foreground md:hidden"
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-label={isMenuOpen ? t("closeMenu") : t("openMenu")}
           onClick={() => setIsMenuOpen((open) => !open)}
         >
-          <span className="sr-only">Menu</span>
+          <span className="sr-only">{t("main")}</span>
           <svg
             aria-hidden="true"
             viewBox="0 0 24 24"
@@ -97,9 +92,12 @@ export function Header() {
           id="mobile-menu"
           className="border-t border-border bg-background md:hidden"
         >
-          <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3 sm:px-6">
+          <nav
+            className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3 sm:px-6"
+            aria-label={t("main")}
+          >
             {mainNavigation.map((item) => {
-              const active = isActivePath(pathname, item.href);
+              const active = pathname === item.href;
 
               return (
                 <Link
@@ -112,17 +110,20 @@ export function Header() {
                       : "text-foreground hover:bg-surface"
                   }`}
                 >
-                  {item.label}
+                  {t(item.key)}
                 </Link>
               );
             })}
-            <Link
-              href="/contacto"
-              onClick={() => setIsMenuOpen(false)}
-              className="mt-2 rounded-full bg-plum px-4 py-2 text-center text-sm font-semibold text-white hover:bg-plum-dark"
-            >
-              Solicitar cotización
-            </Link>
+            <div className="mt-2 flex items-center justify-between gap-3">
+              <LanguageSwitcher />
+              <Link
+                href="/contact"
+                onClick={() => setIsMenuOpen(false)}
+                className="rounded-full bg-plum px-4 py-2 text-center text-sm font-semibold text-white hover:bg-plum-dark"
+              >
+                {t("quote")}
+              </Link>
+            </div>
           </nav>
         </div>
       ) : null}

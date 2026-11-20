@@ -1,20 +1,27 @@
 # Fruttata Exports Web
 
-Informative corporate website for Fruttata Exports S.A.S., built with Next.js, TypeScript, and Tailwind CSS.
+Informative corporate website for Fruttata Exports S.A.S., built with Next.js, TypeScript, Tailwind CSS, and next-intl.
 
 ## Stack
 
 - Next.js (App Router)
 - TypeScript
 - Tailwind CSS
+- next-intl
 - Deploy target: Vercel
 
-## Phase 1 (current)
+## Routes
 
-- Project scaffold
-- Brand color tokens from the official logo
-- Shared layout with header and footer
-- Spanish route folders: `/`, `/productos`, `/nosotros`, `/contacto`
+Internal folders stay in English. Public URLs are localized.
+
+| Internal path | Spanish | English |
+| --- | --- | --- |
+| `/` | `/es` | `/en` |
+| `/products` | `/es/productos` | `/en/products` |
+| `/about` | `/es/nosotros` | `/en/about` |
+| `/contact` | `/es/contacto` | `/en/contact` |
+
+`/` redirects to `/es`.
 
 ## Development
 
@@ -24,9 +31,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Upcoming phases
+## Upcoming
 
-2. Full page content and product catalog
-3. English / Spanish language switch
-4. Contact form with email delivery
-5. SEO polish, favicon, and Vercel deploy
+- Contact form behind `CONTACT_FORM_ENABLED`, sent with Resend
+- Favicon, Open Graph image, and Vercel deploy

@@ -1,0 +1,81 @@
+{
+  "Metadata": {
+    "siteName": "Fruttata Exports",
+    "homeTitle": "Fruttata Exports | Fresh from Ecuador",
+    "homeDescription": "An Ecuadorian company specializing in the export of high-quality tropical and exotic fruits.",
+    "productsTitle": "Products",
+    "productsDescription": "Discover the diversity and richness of Ecuador's tropical and exotic fruits.",
+    "aboutTitle": "About us",
+    "aboutDescription": "Fruttata Exports is an Ecuadorian company dedicated to exporting tropical and exotic fruits.",
+    "contactTitle": "Contact us",
+    "contactDescription": "Let's build business opportunities together. Contact us for availability, specifications, and quotations."
+  },
+  "Nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About us",
+    "contact": "Contact",
+    "quote": "Request a quote",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "main": "Main",
+    "homeLabel": "Fruttata Exports home",
+    "language": "Language"
+  },
+  "Home": {
+    "title": "Welcome to Fruttata Exports",
+    "description": "Bringing Ecuador's agricultural richness to international markets. At Fruttata Exports, we are an Ecuadorian company specializing in the export of high-quality tropical and exotic fruits. We connect the richness of our agricultural production with international markets.",
+    "commitmentsTitle": "Our commitment",
+    "viewProducts": "View products",
+    "qualityTitle": "Quality",
+    "qualityDescription": "Careful selection of our products.",
+    "reliabilityTitle": "Reliability",
+    "reliabilityDescription": "Transparent and responsible business relationships.",
+    "originTitle": "Ecuadorian origin",
+    "originDescription": "Products sourced from Ecuador's rich agricultural heritage.",
+    "sustainabilityTitle": "Sustainability",
+    "sustainabilityDescription": "Commitment to producers, communities, and the environment."
+  },
+  "Products": {
+    "title": "Our products",
+    "description": "Discover the diversity and richness of Ecuador's tropical and exotic fruits. We offer a selection of fresh fruits sourced from Ecuadorian growers, designed to meet the needs of international importers, distributors, and buyers.",
+    "portfolio": "Our product portfolio includes",
+    "specsTitle": "Product specifications",
+    "specsIntro": "For each product, we provide technical information according to availability and commercial requirements:",
+    "specOrigin": "Country of origin and provenance.",
+    "specGrades": "Grades, sizes, and calibers.",
+    "specWeight": "Weight and packaging per box.",
+    "specQuality": "Quality characteristics.",
+    "specShelfLife": "Estimated shelf life.",
+    "specSeason": "Seasonal availability.",
+    "specPackaging": "Packaging and export options.",
+    "specificTitle": "Looking for a specific product?",
+    "specificDescription": "Contact us to learn about our availability, technical specifications, and commercial terms."
+  },
+  "About": {
+    "title": "Who we are",
+    "description": "Fruttata Exports is an Ecuadorian company dedicated to exporting tropical and exotic fruits to international markets.",
+    "body": "We are committed to connecting local agricultural production with global business opportunities by offering carefully selected products and promoting business relationships based on trust, transparency, and quality.",
+    "missionTitle": "Our mission",
+    "mission": "To connect Ecuador's agricultural excellence with international markets through the export of high-quality tropical and exotic fruits, promoting responsible sourcing, reliable supply chains, and sustainable business relationships with producers and customers.",
+    "visionTitle": "Our vision",
+    "vision": "To establish ourselves as a recognized Ecuadorian company in international markets for the export of tropical and exotic fruits, distinguished by product quality, commercial reliability, innovation, and our commitment to sustainable development."
+  },
+  "Contact": {
+    "title": "Let's build business opportunities together",
+    "description": "Are you an importer, distributor, wholesaler, or professional in the food industry looking for high-quality tropical and exotic fruits? At Fruttata Exports, we will be delighted to assist you.",
+    "body": "Our team is available to provide information about our products, availability, technical specifications, and export quotations.",
+    "infoTitle": "Contact information",
+    "phones": "Phone / WhatsApp",
+    "emails": "Email addresses"
+  },
+  "Footer": {
+    "tagline": "Fresh from Ecuador. Connecting with the world.",
+    "values": "Quality · Trust · Commitment · Sustainability",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "address": "Av. Chone and 4 de Diciembre, Bajada Las Palmas area, El Carmen, Manabí, Ecuador.",
+    "rights": "All rights reserved.",
+    "location": "El Carmen, Manabí, Ecuador"
+  }
+}
