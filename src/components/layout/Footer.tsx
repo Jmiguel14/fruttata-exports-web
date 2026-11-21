@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import { ContactDetails } from "@/components/contact/ContactDetails";
 import { Link } from "@/i18n/navigation";
 import { brand } from "@/lib/brand";
 import { mainNavigation } from "@/lib/navigation";
@@ -10,18 +12,26 @@ export async function Footer() {
   const nav = await getTranslations("Nav");
 
   return (
-    <footer className="mt-auto border-t border-border bg-surface">
+    <footer className="mt-auto bg-olive-deep text-white">
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-3 lg:px-8">
-        <div className="space-y-3">
-          <p className="text-lg font-semibold tracking-wide text-plum">
-            {brand.shortName.toUpperCase()}
+        <div className="space-y-4">
+          <span className="inline-flex rounded-2xl bg-white px-3 py-1.5">
+            <Image
+              src="/brand/logo-transparent.png"
+              alt={brand.shortName}
+              width={120}
+              height={134}
+              className="h-16 w-auto"
+            />
+          </span>
+          <p className="max-w-sm text-sm leading-6 text-white/85">
+            {t("tagline")}
           </p>
-          <p className="max-w-sm text-sm leading-6 text-muted">{t("tagline")}</p>
-          <p className="text-sm font-medium text-olive">{t("values")}</p>
+          <p className="text-sm font-medium text-olive-light">{t("values")}</p>
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-plum">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-white">
             {t("navigation")}
           </h2>
           <ul className="mt-4 space-y-2">
@@ -29,7 +39,7 @@ export async function Footer() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-sm text-muted transition-colors hover:text-plum"
+                  className="text-sm text-white/85 transition-colors hover:text-white"
                 >
                   {nav(item.key)}
                 </Link>
@@ -38,42 +48,16 @@ export async function Footer() {
           </ul>
         </div>
 
-        <div className="space-y-3">
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-plum">
+        <div>
+          <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">
             {t("contact")}
           </h2>
-          <p className="text-sm leading-6 text-muted">{t("address")}</p>
-          <ul className="space-y-1">
-            {brand.phones.map((phone) => (
-              <li key={phone.label}>
-                <a
-                  href={phone.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-muted transition-colors hover:text-olive"
-                >
-                  {phone.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <ul className="space-y-1">
-            {brand.emails.map((email) => (
-              <li key={email}>
-                <a
-                  href={`mailto:${email}`}
-                  className="text-sm text-muted transition-colors hover:text-olive"
-                >
-                  {email}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <ContactDetails tone="dark" />
         </div>
       </div>
 
-      <div className="border-t border-border">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-4 py-4 text-xs text-muted sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+      <div className="border-t border-white/15">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-4 py-4 text-xs text-white/75 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <p>
             © {COPYRIGHT_YEAR} {brand.legalName} {t("rights")}
           </p>

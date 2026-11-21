@@ -2,10 +2,17 @@ import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
+import { ContactDetails } from "@/components/contact/ContactDetails";
+import { ContactForm } from "@/components/contact/ContactForm";
+import { WhatsAppCta } from "@/components/contact/WhatsAppCta";
 import { PageShell } from "@/components/layout/PageShell";
+import { Reveal } from "@/components/ui/Reveal";
 import { routing, type Locale } from "@/i18n/routing";
 import { brand } from "@/lib/brand";
+import { isContactFormEnabled } from "@/lib/features";
 import { createPageMetadata } from "@/lib/metadata";
+import { products } from "@/lib/products";
 
 type ContactPageProps = {
   params: Promise<{ locale: string }>;
@@ -38,51 +45,58 @@ export default async function ContactPage({ params }: ContactPageProps) {
   setRequestLocale(locale as Locale);
 
   const t = await getTranslations("Contact");
-  const footer = await getTranslations("Footer");
+  const form = await getTranslations("Form");
+  const formEnabled = isContactFormEnabled();
+
+  const productOptions = products.map((product) => ({
+    id: product.id,
+    name: product.name[locale as Locale],
+  }));
+
+  const infoCard = (
+    <div className="h-full rounded-2xl border border-border bg-white p-6 sm:p-8">
+      <h2 className="text-lg font-semibold text-plum">{t("infoTitle")}</h2>
+      <p className="mt-3 mb-6 text-sm font-medium text-foreground">
+        {brand.legalName}
+      </p>
+      <ContactDetails showLabels />
+    </div>
+  );
 
   return (
     <PageShell title={t("title")} description={t("description")}>
       <p className="max-w-3xl text-base leading-7 text-muted">{t("body")}</p>
 
-      <div className="mt-8 max-w-xl rounded-2xl border border-border bg-white p-8">
-        <h2 className="text-lg font-semibold text-plum">{t("infoTitle")}</h2>
-        <p className="mt-4 text-sm font-medium text-foreground">
-          {brand.legalName}
-        </p>
-        <p className="mt-2 text-sm leading-6 text-muted">{footer("address")}</p>
-
-        <div className="mt-6 space-y-2">
-          <p className="text-xs font-semibold uppercase tracking-wider text-olive">
-            {t("phones")}
-          </p>
-          {brand.phones.map((phone) => (
-            <a
-              key={phone.label}
-              href={phone.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-sm text-muted transition-colors hover:text-plum"
-            >
-              {phone.label}
-            </a>
-          ))}
+      {formEnabled ? (
+        <div className="mt-8 grid gap-8 lg:grid-cols-5">
+          <Reveal className="lg:col-span-3">
+            <div className="rounded-2xl border border-border bg-white p-6 sm:p-8">
+              <h2 className="mb-5 text-lg font-semibold text-plum">
+                {form("title")}
+              </h2>
+              <Suspense
+                fallback={
+                  <div className="h-96 animate-pulse rounded-xl bg-surface" />
+                }
+              >
+                <ContactForm productOptions={productOptions} />
+              </Suspense>
+            </div>
+          </Reveal>
+          <Reveal className="lg:col-span-2" delay={120}>
+            {infoCard}
+          </Reveal>
         </div>
-
-        <div className="mt-6 space-y-2">
-          <p className="text-xs font-semibold uppercase tracking-wider text-olive">
-            {t("emails")}
-          </p>
-          {brand.emails.map((email) => (
-            <a
-              key={email}
-              href={`mailto:${email}`}
-              className="block text-sm text-muted transition-colors hover:text-plum"
-            >
-              {email}
-            </a>
-          ))}
+      ) : (
+        <div className="mt-8 grid gap-8 lg:grid-cols-2">
+          <Reveal className="h-full">
+            <WhatsAppCta />
+          </Reveal>
+          <Reveal className="h-full" delay={120}>
+            {infoCard}
+          </Reveal>
         </div>
-      </div>
+      )}
     </PageShell>
   );
 }

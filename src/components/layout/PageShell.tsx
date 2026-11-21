@@ -7,8 +7,8 @@ type PageShellProps = {
 export function PageShell({ title, description, children }: PageShellProps) {
   return (
     <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-      <div className="max-w-3xl">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-olive">
+      <div className="animate-fade-up max-w-3xl">
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-olive-dark">
           Fruttata Exports
         </p>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight text-plum sm:text-4xl">

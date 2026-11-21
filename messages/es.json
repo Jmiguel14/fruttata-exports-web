@@ -66,8 +66,47 @@
     "description": "¿Eres importador, distribuidor, mayorista o profesional de la industria alimentaria y buscas frutas tropicales y exóticas de calidad? En Fruttata Exports estaremos encantados de atenderte.",
     "body": "Nuestro equipo está disponible para proporcionarte información sobre nuestros productos, disponibilidad, especificaciones técnicas y cotizaciones de exportación.",
     "infoTitle": "Información de contacto",
+    "addressLabel": "Dirección",
     "phones": "Teléfonos / WhatsApp",
-    "emails": "Correos electrónicos"
+    "emails": "Correos electrónicos",
+    "whatsappTitle": "Escríbenos por WhatsApp",
+    "whatsappDescription": "Habla directamente con nuestro equipo comercial sobre disponibilidad, especificaciones y cotizaciones.",
+    "whatsappMessage": "Hola, me gustaría recibir información sobre sus frutas tropicales y cotizaciones de exportación."
+  },
+  "Form": {
+    "title": "Formulario de contacto",
+    "requiredHint": "Los campos con * son obligatorios.",
+    "optional": "opcional",
+    "fullName": "Nombre completo",
+    "company": "Nombre de la empresa",
+    "country": "País",
+    "email": "Correo electrónico",
+    "phone": "Teléfono / WhatsApp",
+    "phoneHint": "Incluye el código de país.",
+    "products": "Productos de interés",
+    "productsHint": "Selecciona todos los que apliquen.",
+    "volume": "Volumen estimado de compra",
+    "volumePlaceholder": "Ej.: 1 contenedor de 40' al mes",
+    "message": "Mensaje o requerimiento",
+    "messagePlaceholder": "Cuéntanos qué necesitas: productos, frecuencia, destino, condiciones…",
+    "submit": "Enviar consulta",
+    "sending": "Enviando…",
+    "successTitle": "¡Consulta enviada!",
+    "successBody": "Gracias por escribirnos. Nuestro equipo comercial te responderá pronto.",
+    "sendFailed": "No pudimos enviar tu consulta. Inténtalo de nuevo o escríbenos por WhatsApp.",
+    "disabled": "El formulario no está disponible por ahora. Escríbenos por WhatsApp o correo.",
+    "errors": {
+      "required": "Este campo es obligatorio.",
+      "invalid_email": "Ingresa un correo electrónico válido.",
+      "invalid_phone": "Ingresa un teléfono válido, con código de país.",
+      "too_short": "Escribe un poco más de detalle.",
+      "too_long": "El texto es demasiado largo."
+    }
+  },
+  "NotFound": {
+    "title": "Página no encontrada",
+    "description": "La página que buscas no existe o fue movida.",
+    "backHome": "Volver al inicio"
   },
   "Footer": {
     "tagline": "Frescos desde Ecuador. Conectando con el mundo.",

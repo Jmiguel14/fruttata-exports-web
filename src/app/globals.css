@@ -10,6 +10,7 @@
   --plum-light: #8a4a6a;
   --olive: #789030;
   --olive-dark: #5c7024;
+  --olive-deep: #4a5a1d;
   --olive-light: #9ab04a;
   --surface: #f7f5f6;
 }
@@ -24,6 +25,7 @@
   --color-plum-light: var(--plum-light);
   --color-olive: var(--olive);
   --color-olive-dark: var(--olive-dark);
+  --color-olive-deep: var(--olive-deep);
   --color-olive-light: var(--olive-light);
   --color-surface: var(--surface);
   --font-sans: var(--font-geist-sans);
@@ -34,4 +36,49 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Scroll reveal: content is visible by default. The Reveal component only
+   hides elements that start below the fold, then fades them in. */
+[data-reveal="hidden"] {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+[data-reveal="shown"] {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 600ms ease-out,
+    transform 600ms ease-out;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 600ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal="hidden"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  [data-reveal="shown"] {
+    transition: none;
+  }
+
+  .animate-fade-up {
+    animation: none;
+  }
 }
