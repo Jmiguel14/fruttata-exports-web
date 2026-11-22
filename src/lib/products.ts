@@ -203,4 +203,40 @@ export const products: Product[] = [
     },
     image: "/fruits/mamey.png",
   },
+  {
+    id: "plantain",
+    name: {
+      es: "Plátano",
+      en: "Plantain",
+    },
+    description: {
+      es: "Fruta de pulpa firme y almidonada, de sabor suave cuando está verde y más dulce al madurar. Muy utilizada en la cocina tradicional.",
+      en: "A firm, starchy fruit with a mild taste when green and a sweeter flavor when ripe, widely used in traditional cooking.",
+    },
+    image: "/fruits/plantain.png",
+  },
+  {
+    id: "malanga",
+    name: {
+      es: "Malanga",
+      en: "Malanga (Cocoyam)",
+    },
+    description: {
+      es: "Tubérculo de pulpa blanquecina que se vuelve cremosa al cocinarse, con sabor suave y un alto aporte de almidón.",
+      en: "A starchy tuber with white flesh that turns creamy when cooked, with a mild flavor and high starch content.",
+    },
+    image: "/fruits/malanga.png",
+  },
+  {
+    id: "cassava",
+    name: {
+      es: "Yuca",
+      en: "Cassava",
+    },
+    description: {
+      es: "Raíz tropical de pulpa blanca, rica en almidón y de textura firme al cocinarse. Muy versátil en la gastronomía.",
+      en: "A tropical root with white flesh, rich in starch and firm when cooked. Highly versatile in gastronomy.",
+    },
+    image: "/fruits/cassava.png",
+  },
 ];
